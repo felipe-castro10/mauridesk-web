@@ -1,0 +1,57 @@
+export default {
+  COLORS: {
+
+    BACKGROUND_400: '#000A0F',
+    DAR_100: "#1e1e1e",
+    DARK_200: "#00070A",
+    DARK_300: "#333",
+    DARK_400: "#888",
+    DARK_700: '#001119',
+    DARK_800: '#0D161B',
+    DARK_900: '#0D1D25',
+    DARK_1000: '#192227',
+    LIGHT_100: '#f0f0f0',
+    LIGHT_200: '#e0e0e0',
+    LIGHT_600: '#76797B',
+    LIGHT_500: '#7C7C8A',
+    LIGHT_400: '#7C7C8A',
+    LIGHT_300: "#E1E1E6",
+    GRAY_010: "#151619",
+    GRAY_050: "#A0A0A0",
+    GRAY_100:"#C6C6C6",
+    GRAY_200: "#AAAAAA",
+    GRAY_300:"#828282",
+    GRAY_350: "#2C2C2C",
+    GRAY_400: "#6F6F6F",
+    GRAY_500:"#5E5E5E",
+
+
+    BLUE_100: "#82F3FF",
+
+    YELLOW_300: "#FFC107",
+    YELLOW_100: '#FFE082',
+
+
+
+    ORANGE_050: '#FFF3E0',
+    ORANGE_100: '#FB9B67',
+    ORANGE_200: '#f37835',
+    ORANGE_250: "#FF7A28",
+    ORANGE_300: '#f35036',
+    ORANGE_800: '#9D4213',
+    WHITE: '#FFFFFF',
+    WHITE_100: '#FCFCFC',
+    WHITE_200: '#F8F8F8',
+    WHITE_230: '#FAFAFA',
+    WHITE_300: '#FFF8E1',
+
+
+    /*COLORS IN STATUS*/
+    BLUE_200: '#3498db',
+    GREEN_200: '#2ECC71',
+    RED_200: '#E74C3C',
+
+
+
+  }
+}
