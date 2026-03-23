@@ -38,6 +38,7 @@ interface ListTicket{
   'OPEN': 'Aberto',
   'IN PROGRESS': 'Em atendimento',
   'CLOSED': 'Encerrado',
+  'RESOLVED': 'Resolvido',
 };
 
 

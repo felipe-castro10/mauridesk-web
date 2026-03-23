@@ -65,6 +65,8 @@ export function ViewTicket(){
             type_user={user?.type_user}
             ticket_id={ticket.id}
             onUpdate={getTicket}
+            status_ticket={ticket.status}
+            closed_at={ticket.closed_at}
           />
            </ViewDescriptions>)}
        

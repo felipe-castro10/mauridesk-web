@@ -1,4 +1,4 @@
-import { FiAlertCircle, FiCheckCircle, FiClock } from "react-icons/fi";
+import { FiAlertCircle, FiArchive, FiCheckCircle, FiClock } from "react-icons/fi";
 import { StatusBadge } from "./styles";
 
 interface Status{
@@ -10,7 +10,8 @@ export function StatusIcon({st}: Status){
       <StatusBadge type={st}>
          {st === 'Aberto' && <FiAlertCircle />}
           {st === 'Em atendimento' && <FiClock />}
-          {st === 'Encerrado' && <FiCheckCircle />}
+          {st === 'Resolvido' && <FiCheckCircle />}
+          {st === 'Encerrado' && <FiArchive/>}
             {st}
        </StatusBadge>
   )
