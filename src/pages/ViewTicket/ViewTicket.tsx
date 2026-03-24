@@ -1,7 +1,7 @@
 import { GoArrowLeft } from "react-icons/go";
 import { SideBar } from "../../components/SideBar/SideBar";
 import { Ticket} from "../../components/Ticket/Ticket";
-import { Back, Container, MainContent, TableInfo, Title, ViewDescriptions } from "./styles";
+import { Back, Container, MainContent, TableInfo, Title, ViewDescriptions, TechUser } from "./styles";
 import { useNavigate, useParams } from "react-router";
 import { MobileHeader } from "../../components/MobileHeader/MobileHeader";
 import { TechCard } from "../../components/TechCard/TechCard";
@@ -10,6 +10,7 @@ import { api } from "../../services/api";
 import type { iTicket } from "../../interfaces/Ticket";
 import { getProfile } from "../../services/user";
 import type { iUsers } from "../../interfaces/Users";
+import { ChatComponent } from "../../components/ChatComponent/ChatComponente";
 
 
 
@@ -58,6 +59,9 @@ export function ViewTicket(){
           </TableInfo>
         { ticket && (<ViewDescriptions>
           <Ticket data={ticket}/>
+
+          <TechUser>
+          
          <TechCard 
             technician={ticket.technician} 
             createdAt={ticket.created_at} 
@@ -68,6 +72,8 @@ export function ViewTicket(){
             status_ticket={ticket.status}
             closed_at={ticket.closed_at}
           />
+          <ChatComponent ticket_id={ticket.id}/>
+          </TechUser>
            </ViewDescriptions>)}
        
       </MainContent>

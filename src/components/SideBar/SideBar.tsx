@@ -43,7 +43,6 @@ export function SideBar(){
     async function loadUser(){
       const data = await getProfile()
       const mt = await getMetrics()
-      console.log(data)
       setUser(data)
 
       

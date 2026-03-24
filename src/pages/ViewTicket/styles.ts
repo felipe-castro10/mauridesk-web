@@ -4,8 +4,8 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: ${theme.COLORS.LIGHT_300};
 
   @media(max-width: ${DEVICE_BREAKPOINTS.MD}){
@@ -52,7 +52,7 @@ export const ViewDescriptions = styled.div`
   width: 100%;
   display: flex;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   overflow-y: auto;
   @media(max-width: ${DEVICE_BREAKPOINTS.MD}){
   flex-direction: column;
@@ -70,7 +70,10 @@ export const Title = styled.h2`
   font-size: 2rem;
   }
 `;
-
+export const TechUser = styled.div`
+display: flex;
+flex-direction: column;
+`;
 
 export const TableInfo = styled.div`
   display: flex;
@@ -78,3 +81,5 @@ export const TableInfo = styled.div`
   justify-content: space-between;
   
 `;
+
+
