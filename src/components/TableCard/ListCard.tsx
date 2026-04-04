@@ -1,5 +1,5 @@
  import { FiAlertCircle, FiCheckCircle, FiClock, FiEye } from "react-icons/fi";
-import { TableCard, Table, Avatar } from "./styles"
+import { TableCard, Table, Avatar, DescriptionCell } from "./styles"
 import { useNavigate } from "react-router";
 import { StatusIcon } from "../StatusIcon/StatusIcon";
 import type { iTicket } from "../../interfaces/Ticket";
@@ -66,7 +66,7 @@ interface ListTicket{
                 <tr key={ticket.id}>
                   <td>{timeAgo(ticket.updated_at)}</td>
                   <td>
-                        <>
+                        <div>
                          {<Avatar 
                            src={`${baseURL}/users/avatar/${ticket.creator_id}`} 
                            onError={(e) => {
@@ -77,16 +77,18 @@ interface ListTicket{
                            alt={ticket.creator.name}
                          />}
                         {ticket.creator.name}
-                       </> 
+                       </div>
                     </td>
                   <td><strong>{ticket.title}</strong></td>
-                  <td>{ticket.description}</td>
+                  <DescriptionCell><p title={ticket.description}>
+                    {ticket.description}
+                    </p></DescriptionCell>
                   <td>{ticket.branch.name}</td>
                   <td>
                      {
                         ticket.technician ? (
-                        <>
-                         <Avatar 
+                         <div>
+                         {<Avatar 
                            src={`${baseURL}/users/avatar/${ticket.technician_id}`} 
                            onError={(e) => {
                              const target = e.target as HTMLImageElement;
@@ -94,9 +96,9 @@ interface ListTicket{
                              target.onerror = null; // Evita loop infinito se a imagem padrão também falhar
                            }}
                            alt={ticket.technician.name}
-                         />
+                         />}
                         {ticket.technician.name}
-                        </>
+                       </div>
                       ) : (
                         <span>Sem interação</span>
                       )

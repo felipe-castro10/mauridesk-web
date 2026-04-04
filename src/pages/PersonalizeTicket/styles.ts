@@ -36,9 +36,7 @@ export const MainContent = styled.main`
   padding: 4rem 6rem;
   display: flex;
   flex-direction: column;
-  min-width: 0; 
-  width: 100%;
-  overflow: hidden;
+
   
   
 
@@ -52,18 +50,15 @@ export const MainContent = styled.main`
 `;
 
 export const ViewDescriptions = styled.div`
+
   width: 100%;
   display: flex;
+
   margin-top: 2rem;
   gap: 2rem;
-
-  /* ADICIONE ISSO: */
-  min-width: 0; 
-  overflow: hidden;
-
   @media(max-width: ${DEVICE_BREAKPOINTS.MD}){
-    flex-direction: column;
-    gap: 1rem;
+  flex-direction: column;
+  gap: 1rem;
   }
 `;
 

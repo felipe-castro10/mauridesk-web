@@ -13,13 +13,13 @@ export const Overlay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000; // Garante que fique acima de tudo
+  z-index: 2000; // Garante que fique acima de tudo
 `;
 
 export const ModalContainer = styled.div`
   background: ${theme.COLORS.WHITE};
-  width: 100%;
-  max-width: 50rem;
+  width: 90%;
+  max-width: 45rem;
   border-radius: 1.2rem;
   padding: 3rem;
   box-shadow: 0 .4rem 2rem rgba(0,0,0,0.2);

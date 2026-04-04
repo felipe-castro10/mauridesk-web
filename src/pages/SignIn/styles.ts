@@ -7,7 +7,7 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
-  height: 100vh;
+  min-height: 100vh;
 
 
   @media(max-width: ${DEVICE_BREAKPOINTS.MD}) {

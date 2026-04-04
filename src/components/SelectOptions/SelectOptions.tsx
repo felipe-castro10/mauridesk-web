@@ -30,17 +30,20 @@ export function CustomSelect({ options, value, onChange }: Props) {
       {open && (
         <Dropdown>
 
-          {options.map(option => (
-            <Option
-              key={option.value}
-              onClick={() => {
-                onChange(option.value)
-                setOpen(false)
-              }}
-            >
-              {option.label}
-            </Option>
-          ))}
+          
+{options.map((option, index) => (
+  <Option 
+    // Combina o valor com o index para garantir unicidade absoluta
+    key={`${option.value}-${index}`} 
+    onClick={() => {
+      onChange(option.value);
+      setOpen(false); // Dica: fechar o menu ao selecionar
+    }}
+  >
+    {option.label}
+  </Option>
+))}
+
 
         </Dropdown>
       )}

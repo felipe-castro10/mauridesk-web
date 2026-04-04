@@ -1,4 +1,4 @@
-import { FiEdit, FiFileText, FiPlusSquare, FiPower } from "react-icons/fi";
+import { FiEdit, FiFileText, FiPlusSquare, FiPower, FiSettings } from "react-icons/fi";
 import { Avatar, BadgeItem, BadgeLabel, BadgeValue, CardHeader, EditButton, ListOptions, MauriCard, NavItem, Sidebar, SummaryGrid, UserBanner } from "./styles";
 import theme from "../../styles/theme";
 import { useLocation, useNavigate } from "react-router";
@@ -86,19 +86,34 @@ export function SideBar(){
 </UserBanner>
 
         <ListOptions>
-          <NavItem active={location.pathname.includes('/home')} 
-        onClick={() => navigate('/home')}>
-            <FiFileText size={20} /> Meus chamados
-          </NavItem>
-          <NavItem active={location.pathname === '/create'} 
-        onClick={() => navigate('/create')}>
-            <FiPlusSquare size={20}  /> Criar chamado
-          </NavItem>
+        <NavItem 
+          active={location.pathname.includes('/home')} 
+          onClick={() => navigate('/home')}
+        >
+          <FiFileText size={20} /> Meus chamados
+        </NavItem>
+
+        <NavItem 
+          active={location.pathname === '/create'} 
+          onClick={() => navigate('/create')}
+        >
+          <FiPlusSquare size={20} /> Criar chamado
+        </NavItem>
+
+        {/* --- OPÇÃO DE CUSTOMIZAÇÃO (APENAS ADMIN) --- */}
+        {user?.type_user === "ADMIN" && (
           <NavItem 
-        onClick={handleLogout}>
-            <FiPower size={20} /> Sair
+            active={location.pathname === '/customize'} 
+            onClick={() => navigate('/customize')} // Ajuste para a sua rota de edição
+          >
+            <FiSettings size={20} /> Customização
           </NavItem>
-        </ListOptions>
+        )}
+
+        <NavItem onClick={handleLogout}>
+          <FiPower size={20} /> Sair
+        </NavItem>
+      </ListOptions>
 
       
       <MauriCard>

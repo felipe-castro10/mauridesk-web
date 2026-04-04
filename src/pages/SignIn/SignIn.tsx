@@ -14,7 +14,7 @@ import {
 } from "./styles"
 import logo from "../../assets/mauricea.svg"
 import { useNavigate } from "react-router"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { api } from "../../services/api"
 import { toast } from "sonner"
 
@@ -28,6 +28,15 @@ export default function SignIn() {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+
+
+  useEffect(() => {
+  const token = localStorage.getItem('mauridesk.token');
+  if (token) {
+    navigate('/home');
+  }
+}, [navigate]);
+
 
   //criando a funsão que irá efetuar login no back e receber o token;
 

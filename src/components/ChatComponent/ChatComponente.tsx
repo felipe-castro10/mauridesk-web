@@ -91,9 +91,6 @@ export function ChatComponent({ticket_id}: ChatProps) {
   }, [messages]);
 
 
-  console.log("Conteúdo de mensges: ",messages)
-
-    console.log(userLogged)
   return (
     <ChatContainer>
       <h3>Interações</h3>

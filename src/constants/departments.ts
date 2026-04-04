@@ -1,11 +1,11 @@
 export const departments =[
-  {label: "Administrativo", value: "Administrativo"},
-  {label: "Recursos Humanos", value: "Recursos Humanos"},
-  {label: "TI", value: "TI"},
-  {label: "Manutenção", value: "Manutenção"},
-  {label: "Enfermaria", value: "Enfermaria"},
-  {label: "PCP Embutidos", value: "PCP Embutidos"},
-  {label: "PCP Produção", value: "PCP Produção"},
-  {label: "Logística", value: "Logística"},
-  {label: "Manutenção", value: "Manutenção"},
+  {label: "Administrativo", value: "admin"},
+  {label: "Recursos Humanos", value: "RH"},
+  {label: "Tecnologia Informação", value: "TI"},
+  {label: "Manutenção", value: "manut"},
+  {label: "Enfermaria", value: "sesmt"},
+  {label: "PCP Embutidos", value: "embutidos"},
+  {label: "PCP Produção", value: "producao"},
+  {label: "Logística", value: "log"},
+  {label: "Almoxarifado", value: "almox"}
 ]

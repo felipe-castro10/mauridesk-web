@@ -5,7 +5,7 @@ import { DEVICE_BREAKPOINTS } from '../../styles/deviceBreakpoints';
 export const Container = styled.div`
   display: flex;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: ${theme.COLORS.LIGHT_300};
 
   @media(max-width: ${DEVICE_BREAKPOINTS.MD}){
@@ -67,7 +67,7 @@ export const SearchContainer = styled.div`
 
 export const MainContent = styled.main`
   flex: 1;
-  padding: 4rem 3rem;
+  padding: 2rem 3rem;
   overflow: hidden;
   display: flex;
   gap: 1rem;
@@ -80,6 +80,7 @@ export const MainContent = styled.main`
     padding: 2rem;
     overflow-y: auto;
     }
+
 `;
 
 export const Title = styled.h2`

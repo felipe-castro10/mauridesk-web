@@ -102,3 +102,72 @@ export const ExtrasTicket = styled.div`
     }
   }
 `;
+
+
+export const MediaGallery = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+`;
+
+export const Thumbnail = styled.div`
+  width: 8rem;
+  height: 8rem;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid ${theme.COLORS.GRAY_200};
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+    border-color: ${theme.COLORS.ORANGE_200};
+  }
+
+  img, video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+
+export const FullScreenModal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  
+  img, video {
+    max-width: 90%;
+    max-height: 80%;
+  }
+
+  .close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+
+  .nav {
+    position: absolute;
+    color: white;
+    font-size: 4rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 2rem;
+  }
+  
+  .prev { left: 2rem; }
+  .next { right: 2rem; }
+`;

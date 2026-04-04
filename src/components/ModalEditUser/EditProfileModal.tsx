@@ -5,6 +5,7 @@ import { baseURL } from '../../services/api'; // Sua URL da API
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { AvatarInput, Footer, Form, InputGroup, ModalContainer, Overlay } from './styles';
 import theme from '../../styles/theme';
+import ReactDOM from 'react-dom';
 
 interface EditProfileModalProps {
   user: any; // Tipagem correta do usuário
@@ -74,7 +75,7 @@ export function EditProfileModal({ user, onClose, onUpdate }: EditProfileModalPr
     }
   }
 
-  return (
+  return ReactDOM.createPortal(
     <Overlay onClick={onClose}>
       {/* Impede que o clique dentro do modal feche ele */}
       <ModalContainer onClick={(e) => e.stopPropagation()}>
@@ -132,6 +133,7 @@ export function EditProfileModal({ user, onClose, onUpdate }: EditProfileModalPr
           </Footer>
         </Form>
       </ModalContainer>
-    </Overlay>
+    </Overlay>,
+    document.body
   );
 }

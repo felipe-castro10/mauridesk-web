@@ -69,6 +69,12 @@ export const Table = styled.table`
       font-size: 1.2rem;
       padding: 1rem;
     }
+
+    div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    }
   }
 
   /* Dica: Adicione um efeito de destaque ao passar o mouse */
@@ -99,3 +105,30 @@ export const Avatar = styled.img`
   margin-right: 1rem;
 `;
 
+
+export const DescriptionCell = styled.td`
+  padding: 1.8rem 2rem;
+  border-bottom: .1rem solid ${theme.COLORS.LIGHT_200};
+  color: ${theme.COLORS.DARK_300};
+  font-size: 1.4rem;
+  vertical-align: top; /* Mantém o alinhamento com as outras colunas */
+
+  /* Limita o texto a 2 linhas */
+  p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+    max-width: 400px; /* Ajuste conforme a largura da sua tela */
+  }
+
+  @media(max-width: ${DEVICE_BREAKPOINTS.MD}){
+    font-size: 1.2rem;
+    padding: 1rem;
+    
+    p {
+      -webkit-line-clamp: 1; /* Apenas 1 linha em dispositivos móveis */
+    }
+  `;

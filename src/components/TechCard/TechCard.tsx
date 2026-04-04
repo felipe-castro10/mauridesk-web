@@ -76,7 +76,7 @@ export function TechCard({ technician, createdAt, firstResponseAt, type_user, ti
     
     try {
       setIsSubmitting(true);
-      const response = await api.patch(`/ticket/closed/${ticket_id}/resolved=${resolvedCheckBox}`)
+      const response = await api.patch(`/ticket/closed/${ticket_id}/${resolvedCheckBox}`)
 
       if(response.status === 200){
         toast.success("Ticket encerrado com sucesso!")
@@ -101,7 +101,7 @@ export function TechCard({ technician, createdAt, firstResponseAt, type_user, ti
         onUpdate();
       }
     }catch{
-      toast.error("Erro ao reabrir o ticket.")
+      toast.error("O ticket já está resolvido!")
     }finally{
       setIsSubmitting(false);
     }

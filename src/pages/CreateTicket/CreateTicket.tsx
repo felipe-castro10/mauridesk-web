@@ -12,26 +12,41 @@ export function CreateTicket(){
 
   const navigate = useNavigate()
 
-  async function handleCreateTicket(data: iTicket){
+ async function handleCreateTicket(data: any, files: File[]) {
+  try {
+   
 
-    console.log(data)
+    // 2. Montagem do objeto final para o Fastify/Prisma
+    const payload = {
+      title: data.title,
+      description: data.description,
+      category_id: data.category_id, // Certifique-se de que o nome bate com o back
+      branch_id: data.branch_id,
+      department: data.department,
+      priority: data.priority,
+      dynamic_responses: data.dynamic_responses // Enviamos o JSON puro também
+    };
 
-    try{
-      await api.post("/tickets", {
-        title: data.title,
-        description: data.description,
-        category: data.category,
-        department: data.department,
-        priority: data.priority,
-        branch_id: data.branch_id
-      }) 
+  
 
-      toast.success("Chamado criado com sucesso!")
-      navigate("/home")
-    }catch(err){
-      toast.error("Erro ao criar o chamado")
+    const response = await api.post('/tickets', payload);
+    const { id: ticketId } = response.data.ticket;
+
+    // 3. Upload de arquivos (mantém sua lógica de attachments)
+    if (files.length > 0) {
+      const formData = new FormData();
+      files.forEach(file => formData.append('files', file));
+      await api.post(`/attachments/${ticketId}`, formData);
     }
+
+    toast.success("Chamado criado com sucesso!");
+    navigate("/home");
+    
+  } catch (error) {
+    console.log("Erro:", error);
+    toast.error("Erro ao criar chamado.");
   }
+}
   
   return(
     <Container>

@@ -20,6 +20,7 @@ export function ViewTicket(){
 
  const [ticket, setTicket] = useState<iTicket | null>(null)
  const [user, setUser] = useState<iUsers | null>(null)
+ const [attachments, setAttachments] = useState<any[]>([])
 
  async function getTicket(){
   const response = await api.get(`/ticket/${id}`)
@@ -28,11 +29,25 @@ export function ViewTicket(){
   setTicket(response.data.ticket)
  }
 
+
+
+
   useEffect(() => {
     async function loadTicket(){
       const response = await api.get(`/ticket/${id}`)
 
       setTicket(response.data.ticket)
+    }
+
+    async function loadAttachments(){
+
+      try{
+           const response = await api.get(`/attachments/${id}`)
+          setAttachments(response.data.attachments)
+      }catch (err){
+        console.error("Erro ao carregar anexos", err)
+      }
+   
     }
 
     async function loadUser(){
@@ -43,7 +58,11 @@ export function ViewTicket(){
 
     loadTicket()
     loadUser()
+    loadAttachments()
   }, [id])
+
+
+
 
 
   return(
@@ -58,7 +77,7 @@ export function ViewTicket(){
                <Back  onClick={() => navigate(-1)}><GoArrowLeft/> Voltar</Back>
           </TableInfo>
         { ticket && (<ViewDescriptions>
-          <Ticket data={ticket}/>
+          <Ticket data={ticket} attachments={attachments}/>
 
           <TechUser>
           
